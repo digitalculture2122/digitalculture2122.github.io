@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			const size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; padding: 10px 10px 10px 100px; box-sizing: border-box; position: absolute; left: 0px; top: 120px; height: 960px; min-height: 960px; width: 1536px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center" align="left">
+
+# Digital Culture <!-- .element: style="letter-spacing: 1.4rem" -->
+###### Summary 2021/2022 <!-- .element: style="letter-spacing: 1.4rem" -->
+</div>
+</script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Mark Fell  <!-- .element: style="letter-spacing: 1.4rem; font-size: 200px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/markfell.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"We can redefine technology, not as a tool subservient to creativity or an obstacle to it, but as part of a wider context within which creative activity happens."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Mark Fell is a multidisciplinary artist based in Sheffield (UK). After studying experimental film and video art at Sheffield City Polytechnic he reverted to earlier interests in computational technology, music and synthetic sound. Fell is widely known for exploring the relationships between popular music styles, such as electronica and club musics, and typically academic approaches to computer-based composition with a particular emphasis on algorithmic and mathematical systems. 
+<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" --> 
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://www.markfell.com/wiki/" frameborder="0" align="center"></iframe>
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1200" height="800" src="https://intersymmetric.xyz" frameborder="0" align="center" style="background: #FFFFFF"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/A56zQuLkrQE" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/esBfmVQWlhI"  frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.factmag.com/2022/01/19/howe-a-yellow-flower/" frameborder="0"  align="center"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Evol <!-- .element: style="letter-spacing: 1.4rem; font-size: 200px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/EVOL.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+ 
+***"It is what it isn't and it isn't what it is."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Berlin-based Tore Rinkveld, aka Evol, is perhaps best known for transforming everyday features of our cityscape into miniature concrete tower blocks through the medium of paint. Inspired by architecture, which he sees as a mirror for society, he paints directly onto the surface of electric enclosures, concrete planters and other familiar elements of the modern city, as well as working on found materials such as cardboard. Drawing on his background in graffiti, he uses his artistic skills to explore the inner workings of the city and makes us look at our surroundings in a new light. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 420px; min-height: 420px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://www.evoltaste.com/" frameborder="0"  allowfullscreen></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/PpgziKvMaUs" title="YouTube video player" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1080" height="720" src="https://www.youtube.com/embed/YcF61Ywh-sI?controls=2?rel=0" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Jung an Tagen <!-- .element: style="letter-spacing: 1.4rem; font-size: 170px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Jung_an_Tagen.png" alt="" ></img></p>
+
+<!-- .element: style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 660px; height: 540px; min-height: 540px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+***"Barely adhering to established syntaxes of rhythm, melody, and timbre, Jung An Tagen seems to want to rewrite the rule book when it comes to electronic music. He's off to a hell of a start." - The Wire***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Jung An Tagen is one of many pseudonyms of Vienna-based musician and artist Stefan Juster, who was active in the post-noise tape scene early on and has numerous releases on various labels to his credit as Bobby Lazar, Cruise Family, Alex Strelka and Stefan Kushima. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://jungantagen.bandcamp.com/" frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/To-POYxObaI" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><iframe width="1920" height="1080" src="https://www.youtube.com/embed/4Cja9aY93iQ" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Harry Lehmann <!-- .element: style="letter-spacing: 1.4rem; font-size: 120px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Harry Lehmann.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"A new idea is marked with a new word, on the one hand to make its claim to novelty perceptible and on the other hand to immunise it against misinterpretations triggered by the ingrained meanings of common terms."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Harry Lehmann is a philosopher currently living and working in Berlin, Germany. His area of theoretical work lies in the fields of aesthetics, art philosophy, music philosophy, systems theory, and social theory. His writings include books, critical articles and catalog essays on contemporary art, literature and New Music.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1080" height="1080" src="https://www.harrylehmann.net/english/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Forensic Architecture <!-- .element: style="letter-spacing: 1.4rem; font-size: 120px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Forensic Architecture.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"... Architectural analysis and digital modelling techniques enable us to unravel that complexity, and to present information in a convincing, precise, and accessible manner–qualities which are crucial for the pursuit of accountability."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 240px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Forensic Architecture (FA) is a research agency, based at Goldsmiths, University of London, investigating human rights violations including violence committed by states, police forces, militaries, and corporations. FA works in partnership with institutions across civil society, from grassroots activists, to legal teams, to international NGOs and media organisations, to carry out investigations with and on behalf of communities and individuals affected by conflict, police brutality, border regimes and environmental violence.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 660px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://forensic-architecture.org/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+# Zentrum für Politische Schönheit <!-- .element: style="letter-spacing: 1.4rem; font-size: 80px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/ZPS.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 660px; height: 528px; min-height: 528px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"We shape political resistance in the 21st century, arming reality with moral fantasy and the power of history. Resistance is an art that needs to hurt, irritate, and unsettle."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+The Center for Political Beauty embodies a radical form of humanism. It is an assault troop that establishes moral beauty, political poetry, and human magnanimity. The Center fuses the power of fantasy with the power of history. Our fundamental conviction is that the legacy of the Holocaust is rendered void by political apathy, the rejection of refugees, and cowardice. We believe that Germany should not only learn from its history but also take action.<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://politicalbeauty.de/aktionen.html" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Mario de Vega <!-- .element: style="letter-spacing: 1.4rem; font-size: 150px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Mario de Vega.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***the power of sound***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Mario de Vega (1979, Mexico City) is an experimental sound artist. His works include site-specific interventions and experiments in psychoacoustics that frequently push the limits of audio perception. He uses challenging frequencies said to induce visceral reactions in the audience, and sound as a tool to confront contemporary issues around and personal experiences of vulnerability.<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="580" height="1080" src="http://mariodevega.info/" frameborder="0"  ></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/cNlX-k5wr5Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Projet EVA <!-- .element: style="letter-spacing: 1.4rem; font-size: 200px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Projet Eva.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***“Projet EVA, formed by Étienne Grenier and Simon Laroche, is an artist duo from Montréal who work with the audience’s discomfort almost as if it was a material in itself.” - DOTS Digital Arts Magazine***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Projet EVA artworks explore relations established between humans, their  environment and its mediation through technological systems. The collective focuses mainly on the subtractive effects of technology and media on the human experience, as well as on how the virtual world is increasingly woven into the urban and social landscape, encroaching on physical.<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://projet-eva.org/en/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Crew <!-- .element: style="letter-spacing: 1.4rem; font-size: 200px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/CREW.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"If Science Fiction is a genre that paints a fantastical future, Scientific Fiction on the other hand brings the future to the present by way of CREW’s many artistic projects, making available, questioning or finding new uses for digital innovation."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+The ‘I’ is an illusion, artist Eric Joris is convinced of that. In 1990 he founded the company CREW. Under his artistic direction and with the help of an international network, they have been steadily chipping away at the boundaries between art, technology and human perception. CREW is a pioneer in the research on how technology influences us and enables us to switch in real-time between different worlds: our own, the cultural and the virtual. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 660px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://crew.brussels/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Cristine Sun Kim <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Christine Sun Kim.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***the sound of the deaf***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+In her work, Berlin-based artist Christine Sun Kim, whose first language is American Sign Language (ASL), approaches the concept of sound via deconstructive exercises, experiments, and observations through drawing, painting, and performance. Over the course of developing her own visual language, Kim explores and employs elements from various information systems. By combining aspects of graphic and musical notation, body language, and ASL, she uses these systems as a means to expand what each is able to communicate and to invent a new grammar and structure structure for her compositions.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 660px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://whitespace.cn/artists/christine-sun-kim/" frameborder="0"  allowfullscreen></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/2Euof4PnjDk" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Joseph Beuys <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Joseph Beuys.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"Every human being is an artist, a freedom being, called to participate in transforming and reshaping the conditions, thinking and structures that shape and inform our lives."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Joseph Beuys was a German-born artist active in Europe and the United States from the 1950s through the early 1980s, who came to be associated with that era's international, Conceptual art and Fluxus movements. Beuys's diverse body of work ranges from traditional media of drawing, painting, and sculpture, to process-oriented, or time-based "action" art, the performance of which suggested how art may exercise a healing effect (on both the artist and the audience) when it takes up psychological, social, and/or political subjects.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 444px; min-height: 444px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/9NfWaTDPcLg" frameborder="0" ></iframe>
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# John Cage <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/John Cage.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 600px; height: 600px; min-height: 600px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"I can't understand why people are frightened of new ideas. I'm frightened of the old ones."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Working during the heyday of Abstract Expressionism, John Cage honed his skills in the midst of the growing American avant-garde. Neither a painter or a sculptor, Cage is best known for revolutionizing modern music through his incorporation of unconventional instrumentation and the idea of environmental music dictated by chance. His approach to composition was deeply influenced by Asian philosophies, focusing on the harmony that exists in nature, as well as elements of chance.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/AWVUp12XPpU" frameborder="0" ></iframe>
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Tomomi Adachi <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/adachi_tomomi.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"For me, being an artist is essentially independent of what society is like."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+ADACHI Tomomi (family name is ADACHI), born in Kanazawa, Japan in 1972, is performer, composer, sound poet, installation artist, occasional theater director. He studied philosophy and aesthetics at Waseda University in Tokyo. He has played improvised music with voice, live electronics and self-made instruments. He had composed works for his own group “Adachi Tomomi Royal Chorus” which is a punk-style choir.<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://www.adachitomomi.com/" frameborder="0" ></iframe>
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Michel Waisvsz <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Michel Waisvisz.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"Composers must go back on the stage and listen and think; they must work and perform where the music actually reigns."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+  
+Michel Waisvisz (8 July 1949, Leiden – 18 June 2008, Amsterdam) was a Dutch composer, performer and inventor of experimental electronic musical instruments. He was the artistic director of STEIM in Amsterdam from 1981, where he collaborated with musicians and artists from all over the world. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1080" height="720" src="https://www.youtube.com/embed/U1L-mVGqug4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Peter Ablinger <!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Peter Ablinger.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"Sounds are not sounds! They are here to distract the intellect and to soothe the senses. Not once is hearing 'hearing': hearing is that which creates me."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Peter Ablinger was born in Schwanenstadt, Austria in 1959. He began studying graphic arts and was enthused by free jazz, but completed his studies in composition with Gösta Neuwirth and Roman Haubenstock-Ramati in Graz and Vienna.  For decades, Peter Ablinger's work has been forcing open fault lines in the topography of the audible. His vast output of scores, electronic pieces, installations, and conceptual works consistently finds ways-funny, pointed, disturbing-to put the ear's organization of reality in doubt. (Seth Brodsky) <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://ablinger.mur.at/akt.html" frameborder="0" ></iframe>
+</script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Kim Cascone<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/kim cascone.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"The digital revolution is over."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Kim Cascone has been involved with electronic music for more than 20 years since his studies at Berklee College of Music and at the New School (with Dana McCurdy) during the 1970s. In the 1980s Cascone worked with David Lynch as Assistant Music Editor on both Twin Peaks and Wild at Heart. He left the film industry in 1991 to concentrate on Silent Records, a label that he founded in 1986, transforming it into the U.S.‘s premier electronic music label. He sold Silent Records in 1996, at the height of its success, in order to pursue a career as a sound designer. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 624px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Bernard Lang<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Bernhard_Lang.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***Difference and Repetition***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Bernhard Lang, born 1957 finished high school and piano studies at the Bruckner Konservatorium and moved to Graz to study jazz piano, arranging and classical piano. There he also studied philosophy and German philology. Since 1988 he has been teaching music theory, harmony and counterpoint at the University of Music and dramatic Arts in Graz, and since 2003, has hold a professorship in composition there. In Graz, he also met Gösta Neuwirth who was to become one of his main influences, and who instructed him in composition for many years outside of the university setting.<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 624px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://bernhardlang.at/mediathek.html" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Martin Arnold<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Martin Arnold.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***...the obsessive deconstruction of found footage..."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Martin Arnold was born 1959 in Vienna and studied psychology and history of art at Vienna University. He has worked as a free-lance film maker since 1988, and since 1995 as a guest professor at the University of Wisconsin (Milwaukee), San Francisco Art Institute, and others. His films include PIECE TOUCHEE (1989), PASSAGE A L’ACTE (1993), and DON’T - DER OSTERREICHFILM (1996).<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.martinarnold.info/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Pierre Jodlowsky<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Jodlowski.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"...the problem of how to musically convey the idea of meaning is at the heart of my work. every composition offers me the opportunity of giving life to a mental space composed of narrative elements, sensations, energies and colours…"***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Pierre Jodlowsky is a composer, performer and multimedia artist. His music, often marked by a high density, is at the crossroads of acoustic and electric sound and is characterized by dramatic and political anchor. His work as a composer led him to perform in France and abroad in most places dedicated to contemporary music aswell as others artistic fields, dance, theater, visual arts, electronic music. His work unfolds today in many areas : films, interactive installations, staging. He is defining his music as an "active process" on the physicall level [musical gestures, energy and space] and on the psychological level [relation to memory and visual dimension of sound].<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 672px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://www.pierrejodlowski.com" frameborder="0"   style="background: #FFFFFF"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/260548192?h=ff33fd36bb" width="1920" height="1080" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/117172457?h=128256cd03" width="1920" height="1080" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Laure M. Hiendl<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Laure M. Hiendl.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***...exploring the performativity of the space-time-body relationship in music as a live act...***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Laure M. Hiendl (*1986, all pronouns) is a composer and performer based in Berlin. Their work is situated between concert music, performance, music theater, installation and other interdisciplinary realms, employing instruments mainly in interaction with electronic means, and exploring the performativity of the space-time-body relationship in music as a live act — as a shared space in time between bodies for an event that is inherently theatrical and political. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="640" height="1080" src="https://www.lauremhiendl.com/about/" frameborder="0"></iframe>
+<iframe width="640" height="1080" src="https://www.lauremhiendl.com/" frameborder="0" ></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Jon Rafman<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Jon Rafman.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"Rarely has reality needed so much to be imagined."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Jon Rafman (1981. is a Canadian artist, filmmaker, and essayist. His work centers around the emotional, social and existential impact of technology on contemporary life. Rarely has reality needed so much to be imagined. <!-- .element: class="fragment" data-fragment-index="1" -->
+<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" --></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="
+http://jonrafman.com/" frameborder="0"></iframe>
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Cathy van Eck<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Cathy van Eck.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***Between Air and Electricity***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+Cathy van Eck (1979 Belgium/Netherlands) is a composer, sound artist, and researcher in the arts. She focuses on composing relationships between everyday objects, human performers, and sound. Her artistic work includes performances with live-electronics and installations with sound objects which she often designs herself. She is interested in setting her gestures into relationships with sounds, mainly by electronic means. The result could be called “performative sound art”. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.cathyvaneck.net/" frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/sgfyuD1H8jY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe src="https://player.vimeo.com/video/250849187?h=ef20dcb32d" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe src="https://player.vimeo.com/video/339997680?h=766daca7ca" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Tianzhuo Chen<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Tianzhou Chen.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 456px; min-height: 456px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"...there is no judgement in my work, it presents a chaos, which is sexual and provocative and one we all need to go through..."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Tianzhuo Chen is considered the enfant terrible of the Chinese art scene. His atmospheric installations mix religious pictorial traditions of Buddhism, Hinduism, and Christianity with the exuberant eccentricity of a globalized Internet pop culture. Japanese Butoh dance meets hip-hop poses, queer aesthetics, rave culture, and digital codes become a psychedelic picture rush. In Bochum, Tianzhuo Chen shows the world premiere of his new work Against the Blade of Honour. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="http://tianzhuochen.com/archives/category/recent-work" frameborder="0"  style="background: #FFFFFF"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1080" height="720" src="https://www.youtube.com/embed/9SRxrxxUv-I" title="YouTube video player" frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe src="https://player.vimeo.com/video/255262247?h=df2af9f9d2&color=efd200&portrait=0" width="1920" height="1080" frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template"><iframe src="https://player.vimeo.com/video/340989474?h=6e2fb51053&color=af6dff" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Royce Ng<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Royce Ng.jpg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 660px; height: 552px; min-height: 552px; width: 518.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***...the intersections of modern Asian history, trans-national tradem drugs, political economy and aesthetics...***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Royce Ng is born in Australia and based in Hong Kong. He is working in digital media and performance who delas with the intersections of modern Asian history, trans-national tradem drugs, political economy and aesthetics. Recent work have focussed on augemented reality and the absence / presence of the human body.   <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.opiummuseum.asia/" frameborder="0" ></iframe></script></section><section data-markdown><script type="text/template">
+<iframe src="https://player.vimeo.com/video/313848045?h=3345a275e5" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></script></section><section data-markdown><script type="text/template">
+<iframe src="https://player.vimeo.com/video/172064470?h=11d99d5ec6&color=ef0004&portrait=0" width="1920" height="1080" frameborder="0"></iframe>
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Anne Imhof<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Anne Imhof.jpg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"There are so many different ways of doing art. But for me personally, it’s image creation that matters. The images that I use as an inspiration come very fast, and go very fast."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Anne Imhof (born 1978 in Gießen / Germany) is a performance and multimedia artist, who lives in Frankfurt and Paris. She studied at the Staatliche Hochschule für Bildende Künste, Städelschule, Frankfurt with Judith Hopf and at the Academy of Art and Design, Offenbach. In 2015 she won the Prize of the Nationalgalerie Berlin.   <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/fYUfAZQqdLg?controls=1" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe src="https://player.vimeo.com/video/235310711?h=026b49fe92" width="1920" height="1080" frameborder="0"></iframe></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/bjVGOLmWmRw" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Holly Childs & Gediminas Zygus<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Holly Childs.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+*It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.*<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 600px; min-height: 600px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Holly Childs is a writer and artist. Her research involves filtering stories of computation through frames of ecology, earth, memory, poetry, and light. Gediminas Žygus is an artist working within the fields of sound, documentary and performance. Their practice assembles a spectrum of influences deriving from architecture, ecology, ethnography, science studies, and media theory.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.hollychilds.com/" frameborder="0"  allowfullscreen></iframe></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Chino Amobi<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Chino Amobi.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 684px; height: 504px; min-height: 504px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+*It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.*<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Chino Amobi is an American experimental electronic musician, contemporary artist and director. He is also co-founder of the independent record label NON Worldwide. He has worked in the fields of painting and sound design, and has since been acclaimed for his albums Airport Music for Black Folk (2011. and Paradiso (2017).<!-- .element: class="fragment" data-fragment-index="1" -->
+<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Donna Haraway<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Donna Haraway.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***"Make kin, not babies."***<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" -->
+
+In terms of research, writing, and teaching, Donna Haraway is one of the most important practitioners in a field that ties together science and technology studies, anthropology, and animal studies. Defying traditionally defined departmental categorization, Donna Haraway holds associate memberships in Anthropology, Environmental Studies, Feminist Studies, and Film and Digital Media. Throughout her work, Haraway explores the ties between technical and popular worlds and the thick traffic between natures and cultures. 
+<!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 636px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1080" height="720" src="https://www.youtube.com/embed/Kxke0iM1ErQ" frameborder="0"></iframe></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Stephanie Dinkins<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Stephanie Dinkins.png" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 780px; height: 420px; min-height: 420px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+***..how algorithmic systems impact communities of color in particular and all of our futures more generally...***'<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Stephanie Dinkins is a transmedia artist who creates experiences that spark dialog about race, gender, aging, and our future histories. Her work in AI and other mediums uses emerging technologies and social collaboration to work toward technological ecosystems based on care and social equity. Dinkins' experiences with and explorations of artificial intelligence have led to a deep interest in how algorithmic systems impact communities of color in particular and all of our futures more generally. <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+</script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background" data-background-color="#EEB73F" -->
+<iframe width="1920" height="1080" src="https://www.stephaniedinkins.com/news-bull-media-bull-events.html" frameborder="0"></iframe></script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="has-light-background reset-margin" style="background-color: #EEB73F; position: absolute; left: 96px; top: 0px; height: 1200px; min-height: 1200px; width: 192px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+<div class="reset-margin" style="padding: 200px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 240px; min-height: 240px; width: 1920px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+# Geumhyung Jeong<!-- .element: style="letter-spacing: 1.4rem; font-size: 130px" -->
+</div>
+<p style="line-height: 0" class="reset-paragraph"><img src="Attachments/Geumhyung Jeong.jpeg" alt="" style="padding: 50px; box-sizing: border-box; position: absolute; left: 192px; top: 720px; height: 480px; min-height: 480px; width: 614.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin"></img></p>
+
+
+*It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.*<!-- .element: style="font-size: 40px; position: absolute; left: 384px; top: 180px; height: 540px; min-height: 540px; width: 1152px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" class="reset-margin" align="left" -->
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  <!-- .element: style="font-size: 30px; position: absolute; left: 864px; top: 600px; height: 360px; min-height: 360px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" class="reset-margin" align="justify" -->
+
+---</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealCustomControls,
+        ],
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1200,"margin":0,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
